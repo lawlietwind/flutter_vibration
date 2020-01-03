@@ -18,7 +18,9 @@ public class SwiftVibrationPlugin: NSObject, FlutterPlugin {
 	case "hasAmplitudeControl":
             result(isDevice)
         case "vibrate":
-            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+//            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+            UIImpactFeedbackGenerator *impactLight = [[UIImpactFeedbackGeneratoralloc]initWithStyle:UIImpactFeedbackStyleLight];
+            [impactLight impactOccurred];
             result(nil)
         case "cancel":
             result(nil)
